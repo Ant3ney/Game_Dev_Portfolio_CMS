@@ -2,12 +2,12 @@
 
 ## Install
 
-    ```bash
-    npm install
-    ```
+```bash
+npm install
+```
 
 ## Run Dev
 
-    ```bash
-    npm dev
-    ```
+```bash
+npm dev
+```
