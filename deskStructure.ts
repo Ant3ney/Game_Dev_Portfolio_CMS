@@ -1,8 +1,4 @@
 // src/deskStructure.js (.ts)
-/* 
-export const structure = (S: any) =>
-  S.document().schemaType('config').documentId('globalConfig').views([S.view.form()])
- */
 export const structure = (S: any) => {
   return S.list()
     .title('Base')
@@ -16,7 +12,6 @@ export const structure = (S: any) => {
           S.list()
             .title('Navigation')
             .items([
-              S.listItem().title('Persistant Nav').child(S.documentTypeList('persistantNav')),
               S.listItem().title('Main Nav Menu').child(S.documentTypeList('mainNavMenu')),
               S.listItem().title('Nav Menus').child(S.documentTypeList('navMenu')),
             ]),
