@@ -7,31 +7,47 @@ export const structure = (S: any) => {
   return S.list()
     .title('Base')
     .items([
-      S.listItem()
+      /* S.listItem()
         .title('Settings')
-        .child(S.document().schemaType('siteSettings').documentId('siteSettings')),
+        .child(S.document().schemaType('siteSettings').documentId('siteSettings')), */
       S.listItem()
         .title('Navigation')
         .child(
           S.list()
             .title('Navigation')
             .items([
-              S.listItem().title('Persistant Nav').child(S.documentTypeList('persistantNav')),
-              S.listItem().title('Main Nav Menu').child(S.documentTypeList('mainNavMenu')),
-              S.listItem().title('Nav Menus').child(S.documentTypeList('navMenu')),
+              /* S.listItem().title('Persistant Nav').child(S.documentTypeList('persistantNav')),
+              S.listItem().title('Main Nav Menu').child(S.documentTypeList('mainNavMenu')), */
+              S.listItem()
+                .title('Home Nav')
+                .child(S.document().schemaType('homeNav').documentId('homeNav')),
+              S.listItem().title('Navs').child(S.documentTypeList('nav')),
             ]),
         ),
-      S.listItem().title('Footer').child(S.document().schemaType('footer').documentId('footer')),
-      S.listItem().title('Pages').child(S.documentTypeList('page')),
       S.listItem()
-        .title('Saved Data')
+        .title('Site Builder')
         .child(
           S.list()
-            .title('Saved Data')
+            .title('Site Builder')
             .items([
-              S.listItem().title('Images').child(S.documentTypeList('imageStorage')),
-              S.listItem().title('Events').child(S.documentTypeList('event')),
-              S.listItem().title('Cards').child(S.documentTypeList('card').title('Cards')),
+              S.listItem().title('Pages').child(S.documentTypeList('page')),
+              /* S.listItem().title('Standalone Text').child(S.documentTypeList('standaloneText')),
+              S.listItem()
+                .title('Spans, Bolds, and Breaks')
+                .child(S.documentTypeList('spansBoldsAndBreaks')), */
+            ]),
+        ),
+      S.listItem()
+        .title('Content')
+        .child(
+          S.list()
+            .title('Content')
+            .items([
+              S.listItem().title('Images').child(S.documentTypeList('imageDocument')),
+              S.listItem().title('Standalone Text').child(S.documentTypeList('standaloneText')),
+              S.listItem()
+                .title('Spans, Bolds, and Breaks')
+                .child(S.documentTypeList('spansBoldsAndBreaks')),
             ]),
         ),
     ])
